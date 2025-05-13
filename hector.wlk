@@ -6,15 +6,16 @@ object hector {
 	var property position = new Position(x = 3, y = 3)
 	const property image = "player.png"
 
-	method plantarMaiz(){
-		game.addVisual(new Maiz(x = self.position().x() , y=self.position().y() ))
+	method plantar(planta){
+		if (self.mismaPosicion(self.position().x(), self.position().y())){	
+			game.addVisual(planta)
+		}	
+		}
+	
+	method mismaPosicion(x,y) = game.getObjectsIn(game.at(x,y)).size() < 2
+
+	method regar(){
+		
 	}
 
-	method plantarTrigo(){
-		game.addVisual(new Trigo(x = self.position().x() , y=self.position().y() ))
-	}	
-
-	method plantarTomaco(){
-		game.addVisual(new Tomaco(x = self.position().x() , y=self.position().y() ))
-	}
 }

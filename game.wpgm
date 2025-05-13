@@ -11,10 +11,11 @@ program farmville {
 
 	//  VISUALES
  	game.addVisualCharacter(hector)
-	keyboard.m().onPressDo{hector.plantarMaiz()}
-	keyboard.t().onPressDo{hector.plantarTrigo()}
-	keyboard.o().onPressDo{hector.plantarTomaco()}
+	keyboard.m().onPressDo{hector.plantar(new Maiz(x = hector.position().x(), y = hector.position().y()))}
+	keyboard.t().onPressDo{hector.plantar(new Trigo(x = hector.position().x(), y = hector.position().y()))}
+	keyboard.o().onPressDo{hector.plantar(new Tomaco(x = hector.position().x(), y = hector.position().y()))}
  //	
+	keyboard.r().onPressDo{hector.regar()}
  	
  	//  COMIENZA
 	game.start()
